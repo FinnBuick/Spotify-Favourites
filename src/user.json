@@ -1,0 +1,23 @@
+{
+  "country": "AU",
+  "display_name": "Finn Buick",
+  "external_urls": {
+    "spotify": "https://open.spotify.com/user/1263341170"
+  },
+  "followers": {
+    "href": null,
+    "total": 10
+  },
+  "href": "https://api.spotify.com/v1/users/1263341170",
+  "id": "1263341170",
+  "images": [
+    {
+      "height": null,
+      "url": "https://scontent.xx.fbcdn.net/v/t1.0-1/c19.0.200.200/p200x200/24862232_1602028949864028_2534090114924752890_n.jpg?_nc_cat=0&oh=35d6347f4543e2685ec4ef4ecbd6637f&oe=5BD7DD18",
+      "width": null
+    }
+  ],
+  "product": "premium",
+  "type": "user",
+  "uri": "spotify:user:1263341170"
+}

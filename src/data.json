@@ -1,0 +1,425 @@
+{
+  "items": [
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/20wkVLutqVOYrc0kxFs7rA"
+            },
+            "href": "https://api.spotify.com/v1/artists/20wkVLutqVOYrc0kxFs7rA",
+            "id": "20wkVLutqVOYrc0kxFs7rA",
+            "name": "Daniel Caesar",
+            "type": "artist",
+            "uri": "spotify:artist:20wkVLutqVOYrc0kxFs7rA"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/3xybjP7r2VsWzwvDQipdM0"
+        },
+        "href": "https://api.spotify.com/v1/albums/3xybjP7r2VsWzwvDQipdM0",
+        "id": "3xybjP7r2VsWzwvDQipdM0",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/8488e30949e687f92b23f69d696faa42f1b50207",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/063c163e745f7791b052255131dc7ebd76a56507",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/2aa3f957e6cd4ec8fc54b1f27b9d4880b888cb4c",
+            "width": 64
+          }
+        ],
+        "name": "Freudian",
+        "release_date": "2017-08-25",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:3xybjP7r2VsWzwvDQipdM0"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/20wkVLutqVOYrc0kxFs7rA"
+          },
+          "href": "https://api.spotify.com/v1/artists/20wkVLutqVOYrc0kxFs7rA",
+          "id": "20wkVLutqVOYrc0kxFs7rA",
+          "name": "Daniel Caesar",
+          "type": "artist",
+          "uri": "spotify:artist:20wkVLutqVOYrc0kxFs7rA"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1U1el3k54VvEUzo3ybLPlM"
+          },
+          "href": "https://api.spotify.com/v1/artists/1U1el3k54VvEUzo3ybLPlM",
+          "id": "1U1el3k54VvEUzo3ybLPlM",
+          "name": "Kali Uchis",
+          "type": "artist",
+          "uri": "spotify:artist:1U1el3k54VvEUzo3ybLPlM"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 278179,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "TCACR1690004"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/7zFXmv6vqI4qOt4yGf3jYZ"
+      },
+      "href": "https://api.spotify.com/v1/tracks/7zFXmv6vqI4qOt4yGf3jYZ",
+      "id": "7zFXmv6vqI4qOt4yGf3jYZ",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Get You (feat. Kali Uchis)",
+      "popularity": 79,
+      "preview_url": "https://p.scdn.co/mp3-preview/004e53a751e628eba8eff49946e90afb640b8c5f?cid=null",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:7zFXmv6vqI4qOt4yGf3jYZ"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1Bl6wpkWCQ4KVgnASpvzzA"
+            },
+            "href": "https://api.spotify.com/v1/artists/1Bl6wpkWCQ4KVgnASpvzzA",
+            "id": "1Bl6wpkWCQ4KVgnASpvzzA",
+            "name": "BROCKHAMPTON",
+            "type": "artist",
+            "uri": "spotify:artist:1Bl6wpkWCQ4KVgnASpvzzA"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/48IFY1wERoy8Lac5FuXHpc"
+        },
+        "href": "https://api.spotify.com/v1/albums/48IFY1wERoy8Lac5FuXHpc",
+        "id": "48IFY1wERoy8Lac5FuXHpc",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/162e407af0c181cb06d92671cd2b0148eeab2986",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/66a57a3d90cf6b0f9510af9ec499f3127f704393",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/65125caf52c937bab1c36d979e0dc3c7b0303403",
+            "width": 64
+          }
+        ],
+        "name": "ALL-AMERICAN TRASH",
+        "release_date": "2016-04-11",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:48IFY1wERoy8Lac5FuXHpc"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1Bl6wpkWCQ4KVgnASpvzzA"
+          },
+          "href": "https://api.spotify.com/v1/artists/1Bl6wpkWCQ4KVgnASpvzzA",
+          "id": "1Bl6wpkWCQ4KVgnASpvzzA",
+          "name": "BROCKHAMPTON",
+          "type": "artist",
+          "uri": "spotify:artist:1Bl6wpkWCQ4KVgnASpvzzA"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 302393,
+      "explicit": true,
+      "external_ids": {
+        "isrc": "USUYG1098368"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/2anAr4t1wpiy2qBK9CGnyn"
+      },
+      "href": "https://api.spotify.com/v1/tracks/2anAr4t1wpiy2qBK9CGnyn",
+      "id": "2anAr4t1wpiy2qBK9CGnyn",
+      "is_local": false,
+      "is_playable": true,
+      "name": "HOME",
+      "popularity": 49,
+      "preview_url": "https://p.scdn.co/mp3-preview/ea786dce9f0ffe0b12b4f5a7cc79724671002a61?cid=null",
+      "track_number": 10,
+      "type": "track",
+      "uri": "spotify:track:2anAr4t1wpiy2qBK9CGnyn"
+    },
+    {
+      "album": {
+        "album_type": "SINGLE",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0M1ImWN3uInxUCZVIE9uxa"
+            },
+            "href": "https://api.spotify.com/v1/artists/0M1ImWN3uInxUCZVIE9uxa",
+            "id": "0M1ImWN3uInxUCZVIE9uxa",
+            "name": "Devonte Hynes",
+            "type": "artist",
+            "uri": "spotify:artist:0M1ImWN3uInxUCZVIE9uxa"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/247AfC9pLuqwgpH8Mo96oA"
+            },
+            "href": "https://api.spotify.com/v1/artists/247AfC9pLuqwgpH8Mo96oA",
+            "id": "247AfC9pLuqwgpH8Mo96oA",
+            "name": "Connan Mockasin",
+            "type": "artist",
+            "uri": "spotify:artist:247AfC9pLuqwgpH8Mo96oA"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/7c5FxlRTMKW34wQj97PKr1"
+        },
+        "href": "https://api.spotify.com/v1/albums/7c5FxlRTMKW34wQj97PKr1",
+        "id": "7c5FxlRTMKW34wQj97PKr1",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/574237c896f0873e5d69381599fb4d2991d700fa",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b1be153c293fb4c9f8d1f00810b831436f6d04b3",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ee196b01ca57b41c55e013bb0dd3e4a260eb9d67",
+            "width": 64
+          }
+        ],
+        "name": "Myths 001",
+        "release_date": "2015-10-30",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:7c5FxlRTMKW34wQj97PKr1"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0M1ImWN3uInxUCZVIE9uxa"
+          },
+          "href": "https://api.spotify.com/v1/artists/0M1ImWN3uInxUCZVIE9uxa",
+          "id": "0M1ImWN3uInxUCZVIE9uxa",
+          "name": "Devonte Hynes",
+          "type": "artist",
+          "uri": "spotify:artist:0M1ImWN3uInxUCZVIE9uxa"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/247AfC9pLuqwgpH8Mo96oA"
+          },
+          "href": "https://api.spotify.com/v1/artists/247AfC9pLuqwgpH8Mo96oA",
+          "id": "247AfC9pLuqwgpH8Mo96oA",
+          "name": "Connan Mockasin",
+          "type": "artist",
+          "uri": "spotify:artist:247AfC9pLuqwgpH8Mo96oA"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 231467,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QMV8L1520802"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/6YA4J5rBfkWZFawehom0fm"
+      },
+      "href": "https://api.spotify.com/v1/tracks/6YA4J5rBfkWZFawehom0fm",
+      "id": "6YA4J5rBfkWZFawehom0fm",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Feelin' Lovely",
+      "popularity": 47,
+      "preview_url": "https://p.scdn.co/mp3-preview/ddecf400d518861473e8768e657868c1592e3bc9?cid=null",
+      "track_number": 2,
+      "type": "track",
+      "uri": "spotify:track:6YA4J5rBfkWZFawehom0fm"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1G9G7WwrXka3Z1r7aIDjI7"
+            },
+            "href": "https://api.spotify.com/v1/artists/1G9G7WwrXka3Z1r7aIDjI7",
+            "id": "1G9G7WwrXka3Z1r7aIDjI7",
+            "name": "OutKast",
+            "type": "artist",
+            "uri": "spotify:artist:1G9G7WwrXka3Z1r7aIDjI7"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2kle7DVfHERKzkFdl1Knot"
+        },
+        "href": "https://api.spotify.com/v1/albums/2kle7DVfHERKzkFdl1Knot",
+        "id": "2kle7DVfHERKzkFdl1Knot",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/6371446ce44818b8ee919d468ff256f4617bb2bc",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/446941d4c6ce0bdfb52632c2df53b66e36972a11",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/8ff5b418c3d757be99db5bc0c79bb63fef9a3a04",
+            "width": 64
+          }
+        ],
+        "name": "Speakerboxxx/The Love Below",
+        "release_date": "2003-09-23",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:2kle7DVfHERKzkFdl1Knot"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1G9G7WwrXka3Z1r7aIDjI7"
+          },
+          "href": "https://api.spotify.com/v1/artists/1G9G7WwrXka3Z1r7aIDjI7",
+          "id": "1G9G7WwrXka3Z1r7aIDjI7",
+          "name": "OutKast",
+          "type": "artist",
+          "uri": "spotify:artist:1G9G7WwrXka3Z1r7aIDjI7"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5gGhRZgP9BJL9fsFdvTzeX"
+          },
+          "href": "https://api.spotify.com/v1/artists/5gGhRZgP9BJL9fsFdvTzeX",
+          "id": "5gGhRZgP9BJL9fsFdvTzeX",
+          "name": "Rosario Dawson",
+          "type": "artist",
+          "uri": "spotify:artist:5gGhRZgP9BJL9fsFdvTzeX"
+        }
+      ],
+      "disc_number": 2,
+      "duration_ms": 267266,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USAR10300997"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/0BGs8ES3XUwD3sNs5Yx0aw"
+      },
+      "href": "https://api.spotify.com/v1/tracks/0BGs8ES3XUwD3sNs5Yx0aw",
+      "id": "0BGs8ES3XUwD3sNs5Yx0aw",
+      "is_local": false,
+      "is_playable": true,
+      "name": "She Lives in My Lap",
+      "popularity": 18,
+      "preview_url": "https://p.scdn.co/mp3-preview/128d785ed1cf0e75a3521ab6fa79deaa2269ea1c?cid=null",
+      "track_number": 8,
+      "type": "track",
+      "uri": "spotify:track:0BGs8ES3XUwD3sNs5Yx0aw"
+    },
+    {
+      "album": {
+        "album_type": "SINGLE",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6sHCvZe1PHrOAuYlwTLNH4"
+            },
+            "href": "https://api.spotify.com/v1/artists/6sHCvZe1PHrOAuYlwTLNH4",
+            "id": "6sHCvZe1PHrOAuYlwTLNH4",
+            "name": "Gus Dapperton",
+            "type": "artist",
+            "uri": "spotify:artist:6sHCvZe1PHrOAuYlwTLNH4"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/3DyFjeYQihBPgyVFdazjfE"
+        },
+        "href": "https://api.spotify.com/v1/albums/3DyFjeYQihBPgyVFdazjfE",
+        "id": "3DyFjeYQihBPgyVFdazjfE",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/eef548a7a077209364cb731e0d8e5909cf56025f",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a618189de0be3789ca960341ca4fe5e565379592",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/756a601f488478c200fe59bd2bb5874cff9fb67e",
+            "width": 64
+          }
+        ],
+        "name": "Moodna, Once with Grace",
+        "release_date": "2016-05-17",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:3DyFjeYQihBPgyVFdazjfE"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6sHCvZe1PHrOAuYlwTLNH4"
+          },
+          "href": "https://api.spotify.com/v1/artists/6sHCvZe1PHrOAuYlwTLNH4",
+          "id": "6sHCvZe1PHrOAuYlwTLNH4",
+          "name": "Gus Dapperton",
+          "type": "artist",
+          "uri": "spotify:artist:6sHCvZe1PHrOAuYlwTLNH4"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 198000,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "usdy41620673"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/6QHD3WBERQyFqbNHdsRq4j"
+      },
+      "href": "https://api.spotify.com/v1/tracks/6QHD3WBERQyFqbNHdsRq4j",
+      "id": "6QHD3WBERQyFqbNHdsRq4j",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Moodna, Once with Grace",
+      "popularity": 62,
+      "preview_url": "https://p.scdn.co/mp3-preview/ececf684e7a1bb343b7611812abe79b66a873772?cid=null",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:6QHD3WBERQyFqbNHdsRq4j"
+    }
+  ],
+  "total": 50,
+  "limit": 5,
+  "offset": 0,
+  "href": "https://api.spotify.com/v1/me/top/tracks?limit=5&offset=0",
+  "previous": null,
+  "next": "https://api.spotify.com/v1/me/top/tracks?limit=5&offset=5"
+}
