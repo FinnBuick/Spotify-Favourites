@@ -6,7 +6,7 @@ class LandingPage extends Component {
       <div className="LandingPage">
           <p>Spotify Favourites</p>
           <p>Find out what your most played tracks are</p>
-          <a href='#'>Get Started</a>
+          <button>Get Started</button>
       </div>
     );
   }
