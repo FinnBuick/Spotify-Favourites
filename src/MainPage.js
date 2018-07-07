@@ -40,7 +40,7 @@ class Header extends Component {
 class Item extends Component {
   render() {
     return (
-      <div style={{display :'inline-block'}}>
+      <div style={{display: 'inline-block', padding: '0px'}}>
         <img src={this.props.img} />
         <h2>{this.props.track}</h2>
         <h2>{this.props.artist}</h2>
@@ -65,10 +65,9 @@ class MainPage extends Component {
     return (
       <div>
         <Header/>
-        <Item track={this.state.items[0] && this.state.items[0].name} artist={this.state.items[0] && this.state.items[0].artists[0].name} img={this.state.items[0] && this.state.items[0].album.images[1].url}/>
-        <Item track={this.state.items[1] && this.state.items[1].name} artist={this.state.items[1] && this.state.items[1].artists[0].name} img={this.state.items[1] && this.state.items[1].album.images[1].url}/>
-        <Item track={this.state.items[2] && this.state.items[2].name} artist={this.state.items[2] && this.state.items[2].artists[0].name} img={this.state.items[2] && this.state.items[2].album.images[1].url}/>
-        <Item track={this.state.items[3] && this.state.items[3].name} artist={this.state.items[3] && this.state.items[3].artists[0].name} img={this.state.items[3] && this.state.items[3].album.images[1].url}/>
+        <div style={{width: '300px', marginLeft: 'auto', marginRight: 'auto'}}>
+          {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[1].url}/>)}
+        </div>
       </div>
     );
   }
