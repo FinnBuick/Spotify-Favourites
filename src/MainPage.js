@@ -6,7 +6,7 @@ import testFavData from './data.json';
 class Logo extends Component {
   render() {
     return (
-      <h2 style={{float: 'left'}}>Spotify Favourites</h2>
+      <h2 className="uk-navbar-left" style={{float: 'left'}}>Spotify Favourites</h2>
     );
   }
 }
@@ -14,7 +14,7 @@ class Logo extends Component {
 class User extends Component {
   render() {
     return (
-      <div style={{float: 'right'}}>
+      <div className="uk-navbar-right" style={{float: 'right', marginTop: 'auto'}}>
         <div style={{color: '#222', display: 'inline-block', padding: '5px'}}>
           {this.props.name}
           <a href='#' style={{display: 'block'}}>Logout</a>
