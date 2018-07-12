@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './assets/css/uikit.css'
+import UIkit from 'uikit';
+import '../node_modules/uikit/dist/css/uikit.css'
 import testUserData from './user.json';
 import testFavData from './data.json';
 
@@ -30,19 +31,22 @@ class User extends Component {
 class Header extends Component {
   render() {
     return (
-      <div style={{height: '60px', padding: '10px'}}>
+      <header style={{height: '60px', padding: '10px'}}>
         <Logo/>
         <User name={testUserData.display_name} img={testUserData.images[0].url}/>
-      </div>
+      </header>
     )
   }
 }
 
 class Item extends Component {
   render() {
+    let dataAttrs = {
+      'data-uk-scrollspy': "{cls: 'uk-animation-fade, repeat: true}"
+    }
     return (
-      <div className="uk-width-1-1" style={{display: 'inline-block', padding: '10px'}}>
-        <img src={this.props.img} style={{width: '500px', height: 'auto'}} />
+      <div className="uk-animation-fade" {...dataAttrs} style={{padding: '20px'}}>
+        <img src={this.props.img} style={{width: '500px', height: 'auto'}}/>
         <h2>{this.props.track}</h2>
         <h2>{this.props.artist}</h2>
       </div>
@@ -66,8 +70,9 @@ class MainPage extends Component {
     return (
       <div>
         <Header/>
-        <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-          <div className="uk-grid">
+        <div>
+          <div className="uk-flex-column">
+            <h2>Your Top 5</h2>
           {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url}/>)}
           </div>
         </div>
