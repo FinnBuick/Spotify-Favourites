@@ -7,7 +7,7 @@ import testFavData from './data.json';
 class Logo extends Component {
   render() {
     return (
-      <h1 style={{float: 'left'}}>Spotify Favourites</h1>
+      <h1 style={{float: 'left', color: 'white'}}>Spotify Favourites</h1>
     );
   }
 }
@@ -16,7 +16,7 @@ class User extends Component {
   render() {
     return (
       <div style={{float: 'right', marginTop: 'auto'}}>
-        <div style={{color: '#222', display: 'inline-block', padding: '5px'}}>
+        <div style={{color: 'white', display: 'inline-block', padding: '5px'}}>
           {this.props.name}
           <a href='#' style={{display: 'block'}}>Logout</a>
         </div>
@@ -31,7 +31,7 @@ class User extends Component {
 class Header extends Component {
   render() {
     return (
-      <header style={{height: '60px', padding: '10px'}}>
+      <header style={{height: '50px', padding: '10px', backgroundColor: '#222'}}>
         <Logo/>
         <User name={testUserData.display_name} img={testUserData.images[0].url}/>
       </header>
@@ -71,7 +71,7 @@ class MainPage extends Component {
       <div>
         <Header/>
         <div>
-          <div className="uk-flex-column">
+          <div className="uk-flex-column" style={{padding: '20px'}}>
             <h2>Your Top 5</h2>
           {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url}/>)}
           </div>
