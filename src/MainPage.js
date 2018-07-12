@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UIkit from 'uikit';
 import '../node_modules/uikit/dist/css/uikit.css'
-import '../node_modules/uikit/dist/css/uikit-core.css'
+import '../node_modules/uikit/dist/js/uikit-icons.js'
 import testUserData from './user.json';
 import testFavData from './data.json';
 
@@ -34,28 +34,21 @@ class Header extends Component {
 class Item extends Component {
   render() {
     return (
-      // <div class="uk-card uk-card-default uk-child-width-1-2" uk-grid>
-      //   <div class="uk-card-media-left uk-cover-container">
-      //     <img src={this.props.img} height='500' width='500'uk-cover/>
-      //     <canvas width="500" height="500"></canvas>
-      //   </div>
-      //   <div>
-      //     <div class="uk-card-body">
-      //       <h2>{this.props.track}</h2>
-      //       <h2>{this.props.artist}</h2>
-      //     </div>
-      //   </div>
-      // </div>
-      //
-      //
-      <div class="uk-card uk-card-hover uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid" uk-grid="">
-        <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-          <img src={this.props.img} alt="" uk-cover="" class="uk-cover"/>
+      <div className="uk-card uk-card-hover uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid" uk-grid="" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500">
+        <div className="uk-flex-last@s uk-card-media-right uk-cover-container">
+          <img src={this.props.img} alt="" uk-cover="" className="uk-cover"/>
           <canvas width="1000" height="1000"></canvas>
         </div>
-        <div class="uk-first-column">
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">{this.props.track} - {this.props.artist}</h3>
+        <div className="uk-first-column">
+          <div className="uk-card-header">
+            <h3 className="uk-card-title">{this.props.track} - {this.props.artist}</h3>
+            <div className="uk-card-body">
+              <span uk-icon="play-circle"></span>
+              <audio controls id="player">
+                <source src={this.props.audio} type="audio/mpeg"/>
+              Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +76,7 @@ class Item extends Component {
           <div>
             <div className="uk-container" style={{width: '600px'}}>
               <h2>Your Top 5</h2>
-              {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url}/>)}
+              {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url} audio={item && item.preview_url}/>)}
             </div>
           </div>
         </div>
