@@ -1,52 +1,39 @@
 import React, { Component } from 'react';
 import UIkit from 'uikit';
 import '../node_modules/uikit/dist/css/uikit.css'
+import '../node_modules/uikit/dist/css/uikit-core.css'
 import testUserData from './user.json';
 import testFavData from './data.json';
 
-class Logo extends Component {
-  render() {
-    return (
-      <h1 style={{float: 'left', color: 'white'}}>Spotify Favourites</h1>
-    );
-  }
-}
 
-class User extends Component {
-  render() {
-    return (
-      <div style={{float: 'right', marginTop: 'auto'}}>
-        <div style={{color: 'white', display: 'inline-block', padding: '5px'}}>
-          {this.props.name}
-          <a href='#' style={{display: 'block'}}>Logout</a>
-        </div>
-        <div style={{display: 'inline-block'}}>
-          <img src={this.props.img} height='40' width='40' style={{borderRadius: '20px'}}/>
-        </div>
-      </div>
-    );
-  }
-}
 
 class Header extends Component {
   render() {
     return (
-      <header style={{height: '50px', padding: '10px', backgroundColor: '#222'}}>
-        <Logo/>
-        <User name={testUserData.display_name} img={testUserData.images[0].url}/>
-      </header>
+      <nav className="uk-navbar uk-navbar-container">
+        <div className="uk-navbar-left">
+          <ul className="uk-navbar-nav">
+            <li className="uk-logo uk-active"><a href="">Spotify Favourites</a></li>
+          </ul>
+        </div>
+        <div className="uk-navbar-right">
+          <ul className="uk-navbar-nav">
+            <li><a href="">Logout</a></li>
+            <div className="uk-navbar-item">{testUserData.display_name}</div>
+            <div className="avatar uk-navbar-item"><img src={testUserData.images[0].url} height='40' width='40'/></div>
+          </ul>
+        </div>
+      </nav>
+
     )
   }
 }
 
 class Item extends Component {
   render() {
-    let dataAttrs = {
-      'data-uk-scrollspy': "{cls: 'uk-animation-fade, repeat: true}"
-    }
     return (
-      <div className="uk-animation-fade" {...dataAttrs} style={{padding: '20px'}}>
-        <img src={this.props.img} style={{width: '500px', height: 'auto'}}/>
+      <div className="uk-animation-fade">
+        <img src={this.props.img}/>
         <h2>{this.props.track}</h2>
         <h2>{this.props.artist}</h2>
       </div>
@@ -68,10 +55,10 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="uk-container">
         <Header/>
         <div>
-          <div className="uk-flex-column" style={{padding: '20px'}}>
+          <div className="uk-flex-column">
             <h2>Your Top 5</h2>
           {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url}/>)}
           </div>
