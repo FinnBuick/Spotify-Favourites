@@ -42,13 +42,12 @@ class Item extends Component {
         <div className="uk-first-column">
           <div className="uk-card-header">
             <h3 className="uk-card-title">{this.props.track} - {this.props.artist}</h3>
-            <div className="uk-card-body">
-              <span uk-icon="play-circle"></span>
-              <audio controls id="player">
-                <source src={this.props.audio} type="audio/mpeg"/>
-              Your browser does not support the audio element.
-              </audio>
-            </div>
+          </div>
+          <div className="uk-card-body">
+            <audio controls>
+              <source src={this.props.audio} type="audio/mpeg"/>
+            Your browser does not support the audio element.
+            </audio>
           </div>
         </div>
       </div>
@@ -66,9 +65,9 @@ class Item extends Component {
     componentDidMount() {
       setTimeout(() => {
         this.setState({items: testFavData.items})
-      }, 0)
+      }, 1000)
     }
-
+    
     render() {
       return (
         <div >
@@ -76,7 +75,13 @@ class Item extends Component {
           <div>
             <div className="uk-container" style={{width: '600px'}}>
               <h2>Your Top 5</h2>
-              {this.state.items[0] && this.state.items.map(item => <Item track={item && item.name} artist={item && item.artists[0].name} img={item && item.album.images[0].url} audio={item && item.preview_url}/>)}
+              {this.state.items[0] ? this.state.items.map(item =>
+                <Item
+                  track={item && item.name}
+                  artist={item && item.artists[0].name}
+                  img={item && item.album.images[0].url}
+                  audio={item && item.preview_url}
+                />) : <span uk-spinner="ratio: 4.5"></span>}
             </div>
           </div>
         </div>
