@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import queryString from 'query-string'
 import './MainPage.css'
 import UIkit from 'uikit';
 import '../node_modules/uikit/dist/css/uikit.css'
@@ -9,7 +10,28 @@ import testFavData from './data.json';
 
 
 class Header extends Component {
+  constructor(){
+    super();
+    this.state = {
+      userData: {}
+    }
+  }
+
+  componentDidMount() {
+    let parsed = queryString.parse(window.location.search)
+    let accessToken = parsed.access_token
+
+    fetch('https://api.spotify.com/v1/me', {
+      headers: {'Authorization': 'Bearer ' + accessToken}
+    }).then((response) => response.json())
+    .then(data => this.setState({userData: {
+      display_name: data.display_name,
+      image: data.images[0].url
+    }}))
+  }
+
   render() {
+
     return (
       <nav className="uk-navbar uk-navbar-transparent">
         <div className="uk-navbar-left">
@@ -20,9 +42,9 @@ class Header extends Component {
         <div className="uk-navbar-right">
           <ul className="uk-navbar-nav">
             <li><a href="">Logout</a></li>
-            <div className="uk-navbar-item">{testUserData.display_name}</div>
+            <div className="uk-navbar-item">{this.state.userData.display_name}</div>
             <div className="uk-navbar-item">
-              <img className="uk-border-circle" src={testUserData.images[0].url} height='40' width='40'/>
+              <img className="uk-border-circle" src={this.state.userData.image} height='40' width='40'/>
             </div>
           </ul>
         </div>
