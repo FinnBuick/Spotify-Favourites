@@ -7,22 +7,14 @@ body, html {
   display: block;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.MainPage {
+  min-height: 100%;
+  position: relative;
+  height: 1750px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.LandingPage {
+  min-height: 100%;
+  position: relative;
+  height: 95vh;
 }
