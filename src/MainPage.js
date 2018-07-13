@@ -47,47 +47,47 @@ class Item extends Component {
           <div className="uk-card-body">
             <audio controls>
               <source src={this.props.audio} type="audio/mpeg"/>
-            Your browser does not support the audio element.
+              Your browser does not support the audio element.
             </audio>
           </div>
         </div>
       </div>
 
-      )
-    }
+    )
+  }
+}
+
+class MainPage extends Component {
+  constructor() {
+    super()
+    this.state = {items: {}}
   }
 
-  class MainPage extends Component {
-    constructor() {
-      super()
-      this.state = {items: {}}
-    }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({items: testFavData.items})
+    }, 1000)
+  }
 
-    componentDidMount() {
-      setTimeout(() => {
-        this.setState({items: testFavData.items})
-      }, 1000)
-    }
-
-    render() {
-      return (
-        <div >
-          <Header/>
-          <div>
-            <div className="uk-container" style={{width: '600px'}}>
-              <h2>Your Top 5</h2>
-              {this.state.items[0] ? this.state.items.map(item =>
-                <Item
-                  track={item && item.name}
-                  artist={item && item.artists[0].name}
-                  img={item && item.album.images[0].url}
-                  audio={item && item.preview_url}
+  render() {
+    return (
+      <div className="MainPage">
+        <Header/>
+        <div>
+          <div className="uk-container" style={{width: '600px'}}>
+            <h2>Your Top 5</h2>
+            {this.state.items[0] ? this.state.items.map(item =>
+              <Item
+                track={item && item.name}
+                artist={item && item.artists[0].name}
+                img={item && item.album.images[0].url}
+                audio={item && item.preview_url}
                 />) : <span uk-spinner="ratio: 4.5"></span>}
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      }
     }
-  }
 
-  export default MainPage;
+    export default MainPage;
