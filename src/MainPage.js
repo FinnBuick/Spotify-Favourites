@@ -67,7 +67,7 @@ class Item extends Component {
         this.setState({items: testFavData.items})
       }, 1000)
     }
-    
+
     render() {
       return (
         <div >
