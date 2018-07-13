@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MainPage.css'
 import UIkit from 'uikit';
 import '../node_modules/uikit/dist/css/uikit.css'
 import '../node_modules/uikit/dist/js/uikit-icons.js'

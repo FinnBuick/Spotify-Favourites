@@ -6,7 +6,7 @@ import MainPage from './MainPage';
 class Footer extends Component{
   render() {
     return (
-      <footer className="uk-padding uk-position-bottom-center">
+      <footer className="uk-padding">
         Finneas Buick &copy; 2018
       </footer>
     )
