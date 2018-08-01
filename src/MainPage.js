@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import queryString from 'query-string'
-import './MainPage.css'
-import UIkit from 'uikit';
-import '../node_modules/uikit/dist/css/uikit.css'
-import '../node_modules/uikit/dist/js/uikit-icons.js'
+import queryString from 'query-string';
+import './MainPage.css';
+import '../node_modules/uikit/dist/css/uikit.css';
+import '../node_modules/uikit/dist/js/uikit-icons.js';
 import testUserData from './user.json';
 import testFavData from './data.json';
 
@@ -18,8 +17,8 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    let parsed = queryString.parse(window.location.search)
-    let accessToken = parsed.access_token
+    let parsed = queryString.parse(window.location.search);
+    let accessToken = parsed.access_token;
 
     fetch('https://api.spotify.com/v1/me', {
       headers: {'Authorization': 'Bearer ' + accessToken}
@@ -54,7 +53,7 @@ class Header extends Component {
   }
 }
 
-class Item extends Component {
+class Track extends Component {
   render() {
     return (
       <div className="uk-card uk-card-hover uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid" uk-grid="" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500">
@@ -80,31 +79,40 @@ class Item extends Component {
 }
 
 class MainPage extends Component {
-  constructor() {
-    super()
-    this.state = {items: {}}
+  constructor(props) {
+    super(props);
+    this.state = {
+      tracks: []
+    }
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({items: testFavData.items})
-    }, 1000)
+    let parsed = queryString.parse(window.location.search);
+    let accessToken = parsed.access_token;
+
+    fetch('https://api.spotify.com/v1/me/top/tracks', {
+      headers: {'Authorization': 'Bearer ' + accessToken}
+    }).then(response => response.json && console.log(response.status))
+    .then(data => this.setState({ tracks: data }));
   }
 
   render() {
+
+    const trackItems = this.state.tracks[0] && this.state.tracks.map(track =>
+      <Track
+        track={track && track.name}
+        artist={track && track.artists[0].name}
+        img={track && track.album.images[1].url}
+        audio={track && track.preview_url}
+        />
+    )
     return (
       <div className="MainPage">
         <Header/>
         <div>
           <div className="uk-container" style={{width: '600px'}}>
             <h2>Your Top 5</h2>
-            {this.state.items[0] ? this.state.items.map(item =>
-              <Item
-                track={item && item.name}
-                artist={item && item.artists[0].name}
-                img={item && item.album.images[0].url}
-                audio={item && item.preview_url}
-                />) : <span uk-spinner="ratio: 4.5"></span>}
+            {this.state.tracks[0] ? trackItems : <span uk-spinner="ratio: 4.5"></span>}
               </div>
             </div>
           </div>
