@@ -93,32 +93,49 @@ class MainPage extends Component {
 
     fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5', {
       headers: {'Authorization': 'Bearer ' + accessToken}
-    }).then(data => data.json())
-      .then(data => {this.setState({tracks: data.items})});
-  }
-
-  render() {
-    console.log(this.state.tracks);
-    const trackItems = this.state.tracks && this.state.tracks.map(track =>
-      <Track
-        track={track && track.name}
-        artist={track && track.artists[0].name}
-        img={track && track.album.images[1].url}
-        audio={track && track.preview_url}
-        />
-    )
-    return (
-      <div className="MainPage">
-        <Header/>
-        <div>
-          <div className="uk-container" style={{width: '600px'}}>
-            <h2>Your Top 5</h2>
-            {this.state.tracks ? trackItems : <span uk-spinner="ratio: 4.5"></span>}
-              </div>
-            </div>
-          </div>
-        );
+    }).then(response => {
+      if(!response.ok) {
+        throw Error("Network request failed")
       }
+
+      return response
+    })
+    .then(data => data.json())
+    .then(data => {
+      this.setState(
+        {
+          tracks: data.items
+        })
+      }, () => {
+        this.setState({
+          requestFailed: true
+        })
+      })
     }
 
-    export default MainPage;
+    render() {
+      if(this.state.requestFailed) return <p>Request Failed, please try again.</p>
+
+      const trackItems = this.state.tracks && this.state.tracks.map(track =>
+        <Track
+          track={track && track.name}
+          artist={track && track.artists[0].name}
+          img={track && track.album.images[1].url}
+          audio={track && track.preview_url}
+          />
+      )
+      return (
+        <div className="MainPage">
+          <Header/>
+          <div>
+            <div className="uk-container" style={{width: '600px'}}>
+              <h2>Your Top 5</h2>
+              {this.state.tracks ? trackItems : <span uk-spinner="ratio: 4.5"></span>}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  export default MainPage;
