@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './LandingPage.css'
+import React, { Component } from "react";
+import "./LandingPage.css";
 
 class LandingPage extends Component {
   render() {
@@ -8,8 +8,15 @@ class LandingPage extends Component {
         <div className="uk-position-center">
           <h1 className="uk-heading-primary">Spotify Favourites</h1>
           <p>Find out your most played tracks</p>
-          <button onClick={() => window.location = 'https://spotify-favourites-backend.herokuapp.com/login'}
-            className="uk-button uk-button-secondary uk-button-large">Get Started</button>
+          <button
+            onClick={() =>
+              (window.location =
+                "https://spotify-favourites-backend.herokuapp.com/login")
+            }
+            className="uk-button uk-button-secondary uk-button-large"
+          >
+            Get Started
+          </button>
         </div>
       </div>
     );
