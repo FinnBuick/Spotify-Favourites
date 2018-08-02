@@ -8,7 +8,7 @@ class LandingPage extends Component {
         <div className="uk-position-center">
           <h1 className="uk-heading-primary">Spotify Favourites</h1>
           <p>Find out what your most played tracks are</p>
-          <button onClick={() => window.location = 'http://localhost:8888/login'}
+          <button onClick={() => window.location = 'https://spotify-favourites-backend.herokuapp.com/login'}
             className="uk-button uk-button-secondary uk-button-large">Get Started</button>
         </div>
       </div>
