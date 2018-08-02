@@ -82,7 +82,8 @@ class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tracks: []
+      tracks: [],
+      requestFailed: false
     }
   }
 
@@ -90,14 +91,14 @@ class MainPage extends Component {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
-    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10', {
+    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5', {
       headers: {'Authorization': 'Bearer ' + accessToken}
-    }).then(response => response.json)
-      .then(data => this.setState({ tracks: data.items }));
+    }).then(data => data.json())
+      .then(data => {this.setState({tracks: data.items})});
   }
 
   render() {
-    console.log(this.state.items);
+    console.log(this.state.tracks);
     const trackItems = this.state.tracks && this.state.tracks.map(track =>
       <Track
         track={track && track.name}
