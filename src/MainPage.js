@@ -3,8 +3,8 @@ import queryString from 'query-string';
 import './MainPage.css';
 import '../node_modules/uikit/dist/css/uikit.css';
 import '../node_modules/uikit/dist/js/uikit-icons.js';
-import testUserData from './user.json';
-import testFavData from './data.json';
+// import testUserData from './user.json';
+// import testFavData from './data.json';
 
 
 
@@ -90,15 +90,15 @@ class MainPage extends Component {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
-    fetch('https://api.spotify.com/v1/me/top/tracks', {
+    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10', {
       headers: {'Authorization': 'Bearer ' + accessToken}
-    }).then(response => response.json && console.log(response.status))
-    .then(data => this.setState({ tracks: data }));
+    }).then(response => response.json)
+      .then(data => this.setState({ tracks: data.items }));
   }
 
   render() {
-
-    const trackItems = this.state.tracks[0] && this.state.tracks.map(track =>
+    console.log(this.state.items);
+    const trackItems = this.state.tracks && this.state.tracks.map(track =>
       <Track
         track={track && track.name}
         artist={track && track.artists[0].name}
@@ -112,7 +112,7 @@ class MainPage extends Component {
         <div>
           <div className="uk-container" style={{width: '600px'}}>
             <h2>Your Top 5</h2>
-            {this.state.tracks[0] ? trackItems : <span uk-spinner="ratio: 4.5"></span>}
+            {this.state.tracks ? trackItems : <span uk-spinner="ratio: 4.5"></span>}
               </div>
             </div>
           </div>

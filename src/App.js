@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import './App.css'
 import LandingPage from './LandingPage';
 import MainPage from './MainPage';
-import testUserData from './user.json';
+// import testUserData from './user.json';
 
 class Footer extends Component{
   render() {
