@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import queryString from "query-string";
 import Header from "./Header";
 import Track from "./Track";
+import Tabs from "./Tabs";
+import Tab from "./Tab";
 import "./MainPage.css";
 import "../node_modules/uikit/dist/css/uikit.css";
 import "../node_modules/uikit/dist/js/uikit-icons.js";
@@ -17,14 +19,17 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
+    // Parse the users access token
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
+    // Fetch the users favourite tracks from spotify
     fetch(
       "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5",
       { headers: { Authorization: "Bearer " + accessToken } }
     )
       .then(response => {
+        // Throw an error if the request fails
         if (!response.ok) {
           throw Error("Network request failed");
         }
@@ -32,8 +37,8 @@ class MainPage extends Component {
         return response;
       })
       .then(data => data.json())
-      .then(
-        data => {
+      .then(data => {
+          // Store response in local state
           this.setState({
             tracks: data.items
           });
@@ -47,6 +52,7 @@ class MainPage extends Component {
   }
 
   render() {
+    // Catch the error
     if (this.state.requestFailed)
       return <p>Request Failed, please try again.</p>;
 
@@ -60,17 +66,18 @@ class MainPage extends Component {
           audio={track && track.preview_url}
         />
       ));
+
     return (
       <div className="MainPage">
         <Header />
         <div>
           <div className="uk-container" style={{ width: "600px" }}>
             <h2 className="uk-text-center"><span>Your Top 5</span></h2>
-              <ul className="uk-tab uk-flex-center">
-                <li class="uk-active"><a href="#">Days</a></li>
-                <li><a href="#">Months</a></li>
-                <li><a href="#">Years</a></li>
-              </ul>
+              <Tabs>
+                <Tab isActive={true} ><p>Days</p></Tab>
+                <Tab>Months</Tab>
+                <Tab>Years</Tab>
+              </Tabs>
             {this.state.tracks ? trackItems : <span uk-spinner="ratio: 4.5" />}
           </div>
         </div>
