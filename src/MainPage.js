@@ -56,7 +56,7 @@ class MainPage extends Component {
     if (this.state.requestFailed)
       return <p>Request Failed, please try again.</p>;
 
-    const trackItems =
+    const tracksDays =
       this.state.tracks &&
       this.state.tracks.map(track => (
         <Track
@@ -74,12 +74,13 @@ class MainPage extends Component {
         <div>
           <div className="uk-container" style={{ width: "600px" }}>
             <h2 className="uk-text-center"><span>Your Top 5</span></h2>
-              <Tabs>
-                <Tab isActive={true} tabText="Days" ></Tab>
+              <Tabs defaultActiveTabIndex={0}>
+                <Tab isActive={true} tabText="Days">
+                  {this.state.tracks ? tracksDays : <span uk-spinner="ratio: 4.5" />}
+                </Tab>
                 <Tab tabText="Months">Months</Tab>
                 <Tab tabText="Years">Years</Tab>
               </Tabs>
-            {this.state.tracks ? trackItems : <span uk-spinner="ratio: 4.5" />}
           </div>
         </div>
       </div>
