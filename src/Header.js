@@ -34,24 +34,21 @@ class Header extends Component {
         <div className="uk-navbar-left">
           <ul className="uk-navbar-nav">
             <li className="uk-logo uk-active">
-              <a href="">Spotify Favourites</a>
+              <h3><a className="uk-link-heading uk-link-reset" href="">Spotify Favourites</a></h3>
             </li>
           </ul>
         </div>
         <div className="uk-navbar-right">
           <ul className="uk-navbar-nav">
-            <li>
-              <a href="">Logout</a>
-            </li>
-            <div className="uk-navbar-item">
-              {this.state.userData.display_name}
-            </div>
+            <li><a href="">Logout</a></li>
+            <div className="uk-navbar-item">{this.state.userData.display_name}</div>
             <div className="uk-navbar-item">
               <img
                 className="uk-border-circle"
                 src={this.state.userData.image}
                 height="40"
                 width="40"
+                alt="User thumbnail"
               />
             </div>
           </ul>

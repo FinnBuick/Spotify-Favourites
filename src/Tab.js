@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
 const Tab = (props) => {
     return (
-        <li className="tab">
-            <a className={`tab-link ${props.linkClassName} ${props.isActive ? 'active' : ''}`}
+        <li className={`${props.isActive ? 'uk-active' : ''}`}>
+            <a className={`${props.linkClassName} `}
                 onClick={(event) => {
                     event.preventDefault();
                     props.onClick(props.tabIndex);
                 }}>
-                <i className={`tab-icon ${props.iconClassName}`}/>
+                {props.tabText}
             </a>
         </li>
     )
