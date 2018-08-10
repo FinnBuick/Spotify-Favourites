@@ -13,7 +13,9 @@ class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tracks: [],
+      tracksDays: [],
+      tracksMonths: [],
+      tracksYears: [],
       requestFailed: false
     };
   }
@@ -40,7 +42,59 @@ class MainPage extends Component {
       .then(data => {
           // Store response in local state
           this.setState({
-            tracks: data.items
+            tracksDays: data.items
+          });
+        },
+        () => {
+          this.setState({
+            requestFailed: true
+          });
+        }
+      );
+
+    fetch(
+      "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5",
+      { headers: { Authorization: "Bearer " + accessToken } }
+    )
+      .then(response => {
+        // Throw an error if the request fails
+        if (!response.ok) {
+          throw Error("Network request failed");
+        }
+
+        return response;
+      })
+      .then(data => data.json())
+      .then(data => {
+          // Store response in local state
+          this.setState({
+            tracksMonths: data.items
+          });
+        },
+        () => {
+          this.setState({
+            requestFailed: true
+          });
+        }
+      );
+
+    fetch(
+      "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5",
+      { headers: { Authorization: "Bearer " + accessToken } }
+    )
+      .then(response => {
+        // Throw an error if the request fails
+        if (!response.ok) {
+          throw Error("Network request failed");
+        }
+
+        return response;
+      })
+      .then(data => data.json())
+      .then(data => {
+          // Store response in local state
+          this.setState({
+            tracksYears: data.items
           });
         },
         () => {
@@ -57,8 +111,32 @@ class MainPage extends Component {
       return <p>Request Failed, please try again.</p>;
 
     const tracksDays =
-      this.state.tracks &&
-      this.state.tracks.map(track => (
+      this.state.tracksDays &&
+      this.state.tracksDays.map(track => (
+        <Track
+          key={track && track.id}
+          track={track && track.name}
+          artist={track && track.artists[0].name}
+          img={track && track.album.images[1].url}
+          audio={track && track.preview_url}
+        />
+      ));
+
+    const tracksMonths =
+      this.state.tracksMonths &&
+      this.state.tracksMonths.map(track => (
+        <Track
+          key={track && track.id}
+          track={track && track.name}
+          artist={track && track.artists[0].name}
+          img={track && track.album.images[1].url}
+          audio={track && track.preview_url}
+        />
+      ));
+
+    const tracksYears =
+      this.state.tracksYears &&
+      this.state.tracksYears.map(track => (
         <Track
           key={track && track.id}
           track={track && track.name}
@@ -76,10 +154,14 @@ class MainPage extends Component {
             <h2 className="uk-text-center"><span>Your Top 5</span></h2>
               <Tabs defaultActiveTabIndex={0}>
                 <Tab isActive={true} tabText="Days">
-                  {this.state.tracks ? tracksDays : <span uk-spinner="ratio: 4.5" />}
+                  {this.state.tracksDays ? tracksDays : <span uk-spinner="ratio: 4.5" />}
                 </Tab>
-                <Tab tabText="Months">Months</Tab>
-                <Tab tabText="Years">Years</Tab>
+                <Tab tabText="Months">
+                  {this.state.tracksMonths ? tracksMonths : <span uk-spinner="ratio: 4.5" />}
+                </Tab>
+                <Tab tabText="Years">
+                  {this.state.tracksYears ? tracksYears : <span uk-spinner="ratio: 4.5" />}
+                </Tab>
               </Tabs>
           </div>
         </div>
