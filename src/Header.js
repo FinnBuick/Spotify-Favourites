@@ -40,7 +40,6 @@ class Header extends Component {
         </div>
         <div className="uk-navbar-right">
           <ul className="uk-navbar-nav">
-            <li><a href="https://spotify-favourites-backend.herokuapp.com/logout">Logout</a></li>
             <div className="uk-navbar-item">{this.state.userData.display_name}</div>
             <div className="uk-navbar-item">
               <img
