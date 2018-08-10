@@ -1,8 +1,8 @@
 body, html {
   text-align: center;
   font-family: sans-serif;
-  background: rgb(238,174,174);
-  background: linear-gradient(168deg, rgba(250, 212, 212, 1) 0%, rgba(30,64,105,1) 100%);
+  background: rgb(103,140,205);
+  background: linear-gradient(0deg, rgba(103,140,205,1) 0%, rgba(168,221,198,1) 100%);
   color: black;
   display: block;
 }
