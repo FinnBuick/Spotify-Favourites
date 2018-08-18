@@ -13,6 +13,7 @@ class App extends Component {
     };
   }
 
+  //Check if we have API access before continuing to the main page of the app
   componentDidMount() {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
@@ -29,6 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App uk-container">
+        {/* If we have API access, display the main page otherwise stay on the landing page */}
         {this.state.userData.display_name ? <MainPage /> : <LandingPage />}
         <footer className="uk-padding">Finneas Buick &copy; 2018</footer>
       </div>
