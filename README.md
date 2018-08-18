@@ -1,6 +1,6 @@
 # Spotify-Favourites
 
-Spotify-Favorites is a react app that connects to the Spotify Web API to fetch the users favorite tracks across various time intervals. A live demo can be seen here https://spotify-favourites.herokuapp.com
+Spotify-Favorites is a react app that connects to the Spotify Web API to fetch the users favorite tracks across various time intervals. A live demo can be seen here: https://spotify-favourites.herokuapp.com
 
 ## Installation
 
@@ -9,7 +9,7 @@ Spotify-Favorites is a react app that connects to the Spotify Web API to fetch t
 3. Start the webpack dev server with `npm start`
 4. Go to http://localhost:8080
 
-## Built width
+## Built with
 * [React.js](https://reactjs.org/)
 * [Node.js](https://nodejs.org/en/)
 * [Express.js](https://expressjs.com/)
