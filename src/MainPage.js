@@ -24,14 +24,14 @@ class MainPage extends Component {
     // Parse the users access token
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
+    let shortTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5"
+    let mediumTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5"
+    let longTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5"
+    let otherParam = { headers: { Authorization: "Bearer " + accessToken } }
 
-    // Fetch the users favourite tracks from spotify
-    fetch(
-      "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5",
-      { headers: { Authorization: "Bearer " + accessToken } }
-    )
-      .then(response => {
-        // Throw an error if the request fails
+    // Fetch the users favourite tracks from spotify (short_term)
+    fetch(shortTermURL, otherParam).then(response => {
+      // Throw an error if the request fails
         if (!response.ok) {
           throw Error("Network request failed");
         }
@@ -52,12 +52,9 @@ class MainPage extends Component {
         }
       );
 
-    fetch(
-      "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5",
-      { headers: { Authorization: "Bearer " + accessToken } }
-    )
-      .then(response => {
-        // Throw an error if the request fails
+    // Fetch the users favourite tracks from spotify (medium_term)
+    fetch(mediumTermURL, otherParam).then(response => {
+      // Throw an error if the request fails
         if (!response.ok) {
           throw Error("Network request failed");
         }
@@ -78,12 +75,9 @@ class MainPage extends Component {
         }
       );
 
-    fetch(
-      "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5",
-      { headers: { Authorization: "Bearer " + accessToken } }
-    )
-      .then(response => {
-        // Throw an error if the request fails
+    // Fetch the users favourite tracks from spotify (long_term)
+    fetch(longTermURL, otherParam).then(response => {
+      // Throw an error if the request fails
         if (!response.ok) {
           throw Error("Network request failed");
         }
