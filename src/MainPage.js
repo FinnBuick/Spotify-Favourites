@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import queryString from "query-string";
 import Header from "./Header";
 import Track from "./Track";
 import Tabs from "./Tabs";
 import Tab from "./Tab";
+import { ApiService } from './Service/ApiService.js'
 import "./MainPage.css";
 import "../node_modules/uikit/dist/css/uikit.css";
 import "../node_modules/uikit/dist/js/uikit-icons.js";
@@ -21,82 +21,18 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
-    // Parse the users access token
-    let parsed = queryString.parse(window.location.search);
-    let accessToken = parsed.access_token;
-    let shortTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5"
-    let mediumTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5"
-    let longTermURL = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5"
-    let otherParam = { headers: { Authorization: "Bearer " + accessToken } }
+    let shortTermURL = "top/tracks?time_range=short_term&limit=5"
+    let mediumTermURL = "top/tracks?time_range=medium_term&limit=5"
+    let longTermURL = "top/tracks?time_range=long_term&limit=5"
 
     // Fetch the users favourite tracks from spotify (short_term)
-    fetch(shortTermURL, otherParam).then(response => {
-      // Throw an error if the request fails
-        if (!response.ok) {
-          throw Error("Network request failed");
-        }
-
-        return response;
-      })
-      .then(data => data.json())
-      .then(data => {
-          // Store response in local state
-          this.setState({
-            tracksDays: data.items
-          });
-        },
-        () => {
-          this.setState({
-            requestFailed: true
-          });
-        }
-      );
+    ApiService.userApi(shortTermURL, this, "tracksDays");
 
     // Fetch the users favourite tracks from spotify (medium_term)
-    fetch(mediumTermURL, otherParam).then(response => {
-      // Throw an error if the request fails
-        if (!response.ok) {
-          throw Error("Network request failed");
-        }
-
-        return response;
-      })
-      .then(data => data.json())
-      .then(data => {
-          // Store response in local state
-          this.setState({
-            tracksMonths: data.items
-          });
-        },
-        () => {
-          this.setState({
-            requestFailed: true
-          });
-        }
-      );
+    ApiService.userApi(mediumTermURL, this, "tracksMonths");
 
     // Fetch the users favourite tracks from spotify (long_term)
-    fetch(longTermURL, otherParam).then(response => {
-      // Throw an error if the request fails
-        if (!response.ok) {
-          throw Error("Network request failed");
-        }
-
-        return response;
-      })
-      .then(data => data.json())
-      .then(data => {
-          // Store response in local state
-          this.setState({
-            tracksYears: data.items
-          });
-        },
-        () => {
-          this.setState({
-            requestFailed: true
-          });
-        }
-      );
+    ApiService.userApi(longTermURL, this, "tracksYears");
   }
 
   render() {
