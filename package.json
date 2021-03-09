@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "^10.2.5",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "npm": "^6.3.0",
     "postcss-cli": "^8.3.1",
     "react": "^16.4.1",
