@@ -1,20 +1,13 @@
-body, html {
+body,
+html {
   text-align: center;
   font-family: sans-serif;
-  background: rgb(103,140,205);
-  background: linear-gradient(0deg, rgba(103,140,205,1) 0%, rgba(168,221,198,1) 100%);
+  background: rgb(103, 140, 205);
+  background: linear-gradient(
+    0deg,
+    rgba(103, 140, 205, 1) 0%,
+    rgba(168, 221, 198, 1) 100%
+  );
   color: black;
   display: block;
-}
-
-.MainPage {
-  min-height: 100%;
-  position: relative;
-  height: 1750px;
-}
-
-.LandingPage {
-  min-height: 100%;
-  position: relative;
-  height: 95vh;
 }

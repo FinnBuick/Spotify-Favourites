@@ -3,11 +3,11 @@ import Header from "./Header";
 import Track from "./Track";
 import Tabs from "./Tabs";
 import Tab from "./Tab";
-import { ApiService } from './Service/ApiService.js'
+import { ApiService } from "./Service/ApiService.js";
 import "./MainPage.css";
 import "../node_modules/uikit/dist/css/uikit.css";
 import "../node_modules/uikit/dist/js/uikit-icons.js";
-
+import "./MainPage.css";
 
 class MainPage extends Component {
   constructor(props) {
@@ -16,14 +16,14 @@ class MainPage extends Component {
       tracksDays: [],
       tracksMonths: [],
       tracksYears: [],
-      requestFailed: false
+      requestFailed: false,
     };
   }
 
   componentDidMount() {
-    let shortTermURL = "top/tracks?time_range=short_term&limit=5"
-    let mediumTermURL = "top/tracks?time_range=medium_term&limit=5"
-    let longTermURL = "top/tracks?time_range=long_term&limit=5"
+    let shortTermURL = "top/tracks?time_range=short_term&limit=5";
+    let mediumTermURL = "top/tracks?time_range=medium_term&limit=5";
+    let longTermURL = "top/tracks?time_range=long_term&limit=5";
 
     // Fetch the users favourite tracks from spotify (short_term)
     ApiService.userApi(shortTermURL, this, "tracksDays");
@@ -42,7 +42,7 @@ class MainPage extends Component {
 
     const tracksDays =
       this.state.tracksDays &&
-      this.state.tracksDays.map(track => (
+      this.state.tracksDays.map((track) => (
         <Track
           key={track && track.id}
           track={track && track.name}
@@ -54,7 +54,7 @@ class MainPage extends Component {
 
     const tracksMonths =
       this.state.tracksMonths &&
-      this.state.tracksMonths.map(track => (
+      this.state.tracksMonths.map((track) => (
         <Track
           key={track && track.id}
           track={track && track.name}
@@ -66,7 +66,7 @@ class MainPage extends Component {
 
     const tracksYears =
       this.state.tracksYears &&
-      this.state.tracksYears.map(track => (
+      this.state.tracksYears.map((track) => (
         <Track
           key={track && track.id}
           track={track && track.name}
@@ -81,18 +81,32 @@ class MainPage extends Component {
         <Header />
         <div>
           <div className="uk-container" style={{ width: "600px" }}>
-            <h2 className="uk-text-center"><span>Your Top 5</span></h2>
-              <Tabs defaultActiveTabIndex={0}>
-                <Tab isActive={true} tabText="Days">
-                  {this.state.tracksDays ? tracksDays : <span uk-spinner="ratio: 4.5" />}
-                </Tab>
-                <Tab tabText="Months">
-                  {this.state.tracksMonths ? tracksMonths : <span uk-spinner="ratio: 4.5" />}
-                </Tab>
-                <Tab tabText="Years">
-                  {this.state.tracksYears ? tracksYears : <span uk-spinner="ratio: 4.5" />}
-                </Tab>
-              </Tabs>
+            <h2 className="uk-text-center">
+              <span>Your Top 5</span>
+            </h2>
+            <Tabs defaultActiveTabIndex={0}>
+              <Tab isActive={true} tabText="Days">
+                {this.state.tracksDays ? (
+                  tracksDays
+                ) : (
+                  <span uk-spinner="ratio: 4.5" />
+                )}
+              </Tab>
+              <Tab tabText="Months">
+                {this.state.tracksMonths ? (
+                  tracksMonths
+                ) : (
+                  <span uk-spinner="ratio: 4.5" />
+                )}
+              </Tab>
+              <Tab tabText="Years">
+                {this.state.tracksYears ? (
+                  tracksYears
+                ) : (
+                  <span uk-spinner="ratio: 4.5" />
+                )}
+              </Tab>
+            </Tabs>
           </div>
         </div>
       </div>
